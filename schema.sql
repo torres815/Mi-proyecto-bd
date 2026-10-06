@@ -12,7 +12,7 @@ CREATE TABLE estudiantes (
 
 -- Insertar datos ficticios de prueba
 INSERT INTO estudiantes (nombre, apellido, email, fecha_nacimiento) VALUES
-('Juan', 'Pérez', 'juan.perez@email.com', '2005-04-12'),
+('Exe', 'Pérez', 'juan.perez@email.com', '2005-04-12'),
 ('María', 'Gómez', 'maria.gomez@email.com', '2004-08-25');
 
 
