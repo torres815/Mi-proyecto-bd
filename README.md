@@ -14,16 +14,16 @@ Este proyecto es una demostración práctica del uso de Git, GitHub y Visual Stu
 - **Editor de código:** Visual Studio Code (con la terminal integrada).
 - **Control de versiones:** Git.
 - **Plataforma remota:** GitHub.
-- **Grabación y Edición:** OBS Studio y CapCut.
+- **Grabación y Edición:** OBS Studio y Edits.
 
 ### Fuentes y recursos consultados
-- [Tutorial de Git y GitHub desde cero - YouTube](https://www.youtube.com) *(Reemplazar con los enlaces reales que miraron)*
-- [Documentación oficial de Git](https://git-scm.com/doc)
-
+- [Tutorial de Git y GitHub desde cero - YouTube]
+- https://youtu.be/ii_UnP81USY?si=gcJfb-eKs2ihfeab
+- 
 ### Organización del grupo
-- **[Nombre Integrante 1]:** Presentación, preparación, comandos de registro local (`git init`, `add`, `commit`) y cierre conceptual.
-- **[Nombre Integrante 2]:** Vinculación remota (`git remote`), subida a la nube (`git push`), segundo commit con cambios y verificación web.
+- **[Exequiel Gonzalez]:** Presentación, preparación, comandos de registro local (`git init`, `add`, `commit`) y cierre conceptual.
+- **[Torres Tiago]:** Vinculación remota (`git remote`), subida a la nube (`git push`), segundo commit con cambios y verificación web.
 
 ### Resolución de problemas
-- *Problema:* Al ejecutar `git push`, solicitó credenciales de acceso a GitHub.
-- *Solución:* Iniciamos sesión en GitHub vinculando la cuenta directamente desde la extensión integrada de Visual Studio Code.
+- *Problema:* Al ejecutar `git push`,No me encontraba el repo que había creado.
+- *Solución:* borramos la carpeta ".git" que se crea en la carpeta del proyecto y volvimos a inicializar. 
