@@ -1,0 +1,64 @@
+/* Formulario de inscripción: se suma a styles.css (mismas variables y vidrio). */
+.pagina-form .contenido { max-width: 1120px; }
+.pagina-form .banner { margin-bottom: 24px; }
+
+.alerta { margin-bottom: 24px; padding: 16px 20px; border-radius: 14px; border: 1px solid rgba(255, 138, 122, .55); background: rgba(255, 138, 122, .1); }
+.alerta[hidden] { display: none; }
+.alerta ul { margin: 8px 0 0 20px; line-height: 1.6; }
+
+.seccion-form { padding: 28px 30px; margin-bottom: 24px; }
+.seccion-form > header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid var(--vidrio-borde); }
+.seccion-form h2 { font-size: 1.3rem; }
+.seccion-form > header small { color: rgba(246, 234, 210, .65); }
+
+.rejilla { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px 16px; }
+.c4 { grid-column: span 4; } .c6 { grid-column: span 6; } .c8 { grid-column: span 8; } .c12 { grid-column: span 12; }
+
+.f { position: relative; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.f label, .etiqueta { font-size: .88rem; color: rgba(246, 234, 210, .82); }
+.req::after { content: ' *'; color: var(--oro); }
+.f input[type="text"], .f input[type="date"], .f input[type="email"], .f input[type="tel"], .f select, .f textarea, .edad {
+    width: 100%; padding: 12px 14px; font: inherit; color: var(--crema);
+    background: rgba(0, 0, 0, .22); border: 1px solid var(--vidrio-borde); border-radius: 12px;
+    transition: border-color .25s, box-shadow .25s;
+}
+.f textarea { resize: vertical; min-height: 88px; }
+.edad { display: block; min-height: 46px; color: rgba(246, 234, 210, .85); }
+.f input:focus, .f select:focus, .f textarea:focus { outline: none; border-color: var(--oro); box-shadow: 0 0 0 4px rgba(224, 176, 79, .16); }
+.f.invalido input, .f.invalido select, .f.invalido textarea { border-color: var(--error); }
+.f.invalido > label, .f.invalido > .etiqueta { color: var(--error); }
+
+.foto-bloque { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
+.foto-previa { width: 132px; height: 160px; display: grid; place-items: center; overflow: hidden; border-radius: 16px; border: 1px dashed var(--vidrio-borde); background: rgba(0, 0, 0, .22); color: rgba(246, 234, 210, .55); font-size: .85rem; }
+.foto-previa img { width: 100%; height: 100%; object-fit: cover; }
+.foto-acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.foto-acciones small { flex-basis: 100%; color: rgba(246, 234, 210, .6); }
+
+.texto-acta { line-height: 1.6; color: rgba(246, 234, 210, .8); margin-bottom: 18px; max-width: 70ch; }
+.rejilla .texto-acta { margin-bottom: 4px; }
+.opciones { display: flex; flex-wrap: wrap; gap: 12px; }
+.opcion { display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 12px; cursor: pointer; border: 1px solid var(--vidrio-borde); background: rgba(0, 0, 0, .22); }
+.opcion input { accent-color: var(--oro); width: 18px; height: 18px; }
+.opcion:has(input:checked) { border-color: var(--oro); background: rgba(224, 176, 79, .16); }
+.f.invalido .opcion { border-color: var(--error); }
+
+.btn-sec, .btn-primario { padding: 12px 22px; border-radius: 12px; font: 600 1rem var(--fuente-texto); cursor: pointer; transition: box-shadow .25s, transform .2s, background .2s; }
+.btn-sec { color: var(--crema); background: transparent; border: 1px solid var(--vidrio-borde); }
+.btn-sec:hover { background: rgba(255, 255, 255, .07); border-color: var(--oro); }
+.btn-primario { color: var(--espresso); border: 0; background: linear-gradient(135deg, var(--oro-claro), var(--oro) 50%, var(--caramelo)); box-shadow: 0 6px 20px rgba(224, 176, 79, .3); }
+.btn-primario:hover { box-shadow: 0 0 0 4px rgba(224, 176, 79, .18), 0 10px 34px rgba(224, 176, 79, .5); transform: translateY(-2px); }
+.btn-primario:disabled { opacity: .7; cursor: wait; transform: none; }
+
+.acciones { position: sticky; bottom: 0; z-index: 5; display: flex; justify-content: flex-end; gap: 12px; padding: 16px 0; margin-top: 8px; background: linear-gradient(to top, rgba(31, 19, 13, .92) 60%, transparent); }
+
+.camara { border: 1px solid var(--vidrio-borde); border-radius: 20px; padding: 20px; background: var(--cacao); color: var(--crema); }
+.camara::backdrop { background: rgba(0, 0, 0, .65); }
+.camara video { display: block; width: min(480px, 80vw); border-radius: 14px; background: #000; transform: scaleX(-1); }
+.camara-acciones { display: flex; justify-content: flex-end; gap: 10px; margin-top: 14px; }
+
+@media (max-width: 760px) {
+    .c4, .c6, .c8 { grid-column: span 12; }
+    .seccion-form { padding: 22px 18px; }
+    .acciones { justify-content: stretch; }
+    .acciones button { flex: 1; }
+}

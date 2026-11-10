@@ -1,0 +1,51 @@
+/* Ficha imprimible: papel claro, misma tipografía y marrón/oro del sistema. */
+:root { --tinta: #2a1a10; --nuez: #6b4328; --oro: #b07a3c; --linea: #d9c9ae; --papel: #fffdf8; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+body { font-family: 'Hanken Grotesk', system-ui, sans-serif; color: var(--tinta); background: #e9e0d0; line-height: 1.4; }
+
+.barra { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; padding: 14px; background: var(--tinta); }
+.barra button, .barra a { padding: 10px 18px; border-radius: 10px; border: 1px solid #f4d98c; background: transparent; color: #f6ead2; font-weight: 600; font-size: .95rem; font-family: inherit; text-decoration: none; cursor: pointer; }
+.barra button { background: linear-gradient(135deg, #f4d98c, #e0b04f); color: var(--tinta); border-color: transparent; }
+.barra a:hover { background: rgba(255, 255, 255, .1); }
+
+.hoja { width: min(210mm, 100%); margin: 24px auto; padding: 14mm; background: var(--papel); box-shadow: 0 10px 40px rgba(0, 0, 0, .2); }
+
+.cabecera { display: grid; grid-template-columns: auto 1fr 30mm; gap: 16px; align-items: center; padding-bottom: 12px; border-bottom: 3px solid var(--nuez); }
+.logo { height: 22mm; width: auto; }
+.titulos p { font-size: .85rem; color: var(--nuez); }
+.titulos h1 { font: 700 1.7rem 'Fraunces', Georgia, serif; margin: 2px 0; }
+.foto { width: 30mm; height: 38mm; border: 1px solid var(--linea); display: grid; place-items: center; overflow: hidden; color: #9a8a74; font-size: .8rem; }
+.foto img { width: 100%; height: 100%; object-fit: cover; }
+
+section { margin-top: 14px; break-inside: avoid; }
+h2 { font: 700 1.05rem 'Fraunces', Georgia, serif; color: var(--nuez); padding: 4px 0 4px 10px; border-left: 4px solid var(--oro); background: #f6ecd8; margin-bottom: 8px; }
+.datos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px 14px; }
+.d { border-bottom: 1px solid var(--linea); padding-bottom: 3px; min-height: 12mm; }
+.d.w2 { grid-column: span 2; } .d.w4 { grid-column: span 4; }
+.d span { display: block; font-size: .72rem; color: #7a6850; }
+.d strong { font-weight: 600; font-size: .95rem; overflow-wrap: anywhere; }
+.sin-datos { color: #7a6850; font-size: .9rem; padding-left: 10px; }
+.texto-acta { font-size: .88rem; margin-bottom: 8px; }
+
+.firmas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 22mm; }
+.firmas div { border-top: 1px solid var(--tinta); padding-top: 4px; text-align: center; font-size: .8rem; }
+.pie { margin-top: 10mm; font-size: .75rem; color: #7a6850; text-align: right; }
+
+.ficha-vacia { display: grid; place-items: center; min-height: 100vh; text-align: center; background: var(--papel); }
+.ficha-vacia h1 { font: 700 1.6rem 'Fraunces', Georgia, serif; margin-bottom: 12px; }
+.ficha-vacia a { color: var(--nuez); }
+
+@media (max-width: 640px) {
+    .hoja { padding: 16px; }
+    .cabecera { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+    .datos { grid-template-columns: 1fr 1fr; }
+    .d.w4 { grid-column: span 2; }
+    .firmas { grid-template-columns: 1fr; margin-top: 40px; }
+}
+@media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff; }
+    .no-print { display: none !important; }
+    .hoja { width: 100%; margin: 0; padding: 0; box-shadow: none; }
+    h2 { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

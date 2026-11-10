@@ -121,6 +121,7 @@ function iniciarPanel() {
     // Navegación con estado activo
     const enlaces = sidebar.querySelectorAll('.menu a');
     enlaces.forEach(a => a.addEventListener('click', e => {
+        if (a.getAttribute('href') !== '#') return;   // enlaces reales (formulario, inicio) navegan normalmente
         e.preventDefault();
         enlaces.forEach(x => x.classList.remove('activo'));
         a.classList.add('activo');
@@ -131,6 +132,7 @@ function iniciarPanel() {
     document.getElementById('burger')?.addEventListener('click', () => sidebar.classList.toggle('abierto'));
 
     document.querySelectorAll('.enlace-tarjeta').forEach(a => a.addEventListener('click', e => {
+        if (a.getAttribute('href') !== '#') return;
         e.preventDefault();
         CEN.toast(`"${a.dataset.aviso}" estará disponible pronto.`);
     }));

@@ -45,7 +45,7 @@ $inicial  = mb_strtoupper(mb_substr(html_entity_decode($nombre), 0, 1));
                 <a href="#" data-seccion="novedades">Registro de novedades</a>
                 <a href="#" data-seccion="seguimiento">Seguimiento grupal</a>
                 <a href="#" data-seccion="entregas">Entregas digitales</a>
-                <a href="#" data-seccion="inscripciones">Inscripciones</a>
+                <a href="formulario.php" data-seccion="formulario">Formulario</a>
             </nav>
 
             <a class="salir" href="auth/logout.php">Cerrar sesión</a>
@@ -74,6 +74,12 @@ $inicial  = mb_strtoupper(mb_substr(html_entity_decode($nombre), 0, 1));
                     <h2>Seguimiento grupal</h2>
                     <p>Consultá la asistencia y el estado de cada curso en un solo lugar.</p>
                     <a href="#" class="enlace-tarjeta" data-aviso="Seguimiento grupal">Ver cursos</a>
+                </article>
+                <article class="tarjeta-vidrio tilt" tabindex="0">
+                    <div class="icono">🎓</div>
+                    <h2>Inscripción de estudiantes</h2>
+                    <p>Cargá los datos del alumno/a, su familia y el acta de convivencia, y generá la ficha para imprimir.</p>
+                    <a href="formulario.php" class="enlace-tarjeta">Abrir formulario</a>
                 </article>
                 <article class="tarjeta-vidrio tilt" tabindex="0">
                     <div class="icono">📂</div>

@@ -1,0 +1,5 @@
+# Las fotos se muestran, pero nada de lo subido puede ejecutarse.
+Options -Indexes
+<FilesMatch "\.(php|phtml|phar|php[0-9])$">
+    Require all denied
+</FilesMatch>
